@@ -43,7 +43,7 @@ class HangpersonApp < Sinatra::Base
       repeated = !@game.guess(letter)
       flash[:message] =  "You have already used that letter." if repeated
     rescue ArgumentError
-      flash[:message] = "Invalid guess"
+      flash[:message] = "Invalid guess."
     end
     redirect '/show'
   end
@@ -65,13 +65,11 @@ class HangpersonApp < Sinatra::Base
   end
   
   get '/win' do
-    ### YOUR CODE HERE ###
-    erb :win # You may change/remove this line
+    erb :show
   end
   
   get '/lose' do
-    ### YOUR CODE HERE ###
-    erb :lose # You may change/remove this line
+    erb :show
   end
   
 end
